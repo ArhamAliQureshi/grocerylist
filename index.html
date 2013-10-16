@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="appModule">
 <head>
-    <title>Grocery List</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title ng-controller="appCtrl">{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <script type="text/javascript" src="js/libraries/jquery-2.0.0.js"></script>
     <script type="text/javascript" src="js/libraries/angular.min.js"></script>
+    <script type="text/javascript" src="js/libraries/bootstrap.min.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<div id="application" ng-view="">
-
+<div id="application" ng-controller="appCtrl">
+    <div id="header">
+        <div id="heading"><h4>{{heading | uppercase}}</h4></div>
+        <div id="dateContainer"><h5>{{date | date}}</h5></div>
+    </div>
+    <table class="table table-hover">
+        <tr>
+            <th style="width: 5%">No.</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Status</th>
+        </tr>
+        <tr ng-repeat="product in products">
+            <inputcolumn></inputcolumn>
+            <td>{{$index+1}}</td>
+            <td ng-click="product.edit= true"><p ng-hide="product.edit">{{product.item}}</p><input ng-show="product.edit" ng-blur="product.edit= false" type="text" ng-model="product.item"></td>
+            <td ng-click="product.edit= true" ng-blur="product.edit= false"><p ng-hide="product.edit">{{product.quantity}}</p><input ng-show="product.edit" type="text" ng-model="product.quantity"></td>
+            <td style="text-align: center"><input type="checkbox" ng-model="product.status"></td>
+        </tr>
+    </table>
 </div>
 </body>
+<script type="text/javascript" src="js/module.js"></script>
 </html>
