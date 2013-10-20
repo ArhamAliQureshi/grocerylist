@@ -1,3 +1,6 @@
+body{
+ background-image: url("../img/background.jpg");
+}
 #application{
 
     width: 100%;
@@ -7,6 +10,7 @@
     border-width: 1px;
     border-color: dodgerblue;
 }
+
 #header{
     text-align: center;
 }

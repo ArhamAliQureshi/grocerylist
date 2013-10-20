@@ -26,14 +26,16 @@
             <th>Quantity</th>
             <th>Status</th>
         </tr>
-        <tr ng-repeat="product in products">
-            <inputcolumn></inputcolumn>
-            <td>{{$index+1}}</td>
-            <td ng-click="product.edit= true"><p ng-hide="product.edit">{{product.item}}</p><input ng-show="product.edit" ng-blur="product.edit= false" type="text" ng-model="product.item"></td>
-            <td ng-click="product.edit= true" ng-blur="product.edit= false"><p ng-hide="product.edit">{{product.quantity}}</p><input ng-show="product.edit" type="text" ng-model="product.quantity"></td>
-            <td style="text-align: center"><input type="checkbox" ng-model="product.status"></td>
+        <tr ng-repeat="product in products | range:10">
+            <td ng-show="product.item || product.quantity">{{$index+1}}</td>
+            <td><div contenteditable="{{isEditable}}" ng-model="product.item">{{product.item}}</div></td>
+            <td><div contenteditable="{{isEditable}}" ng-model="product.quantity">{{product.quantity}}</div></td>
+            <td style="text-align: center"><input type="checkbox" ng-model="product.status" ng-show="product.item || product.quantity"></td>
         </tr>
     </table>
+    <button class="btn btn-warning">Edit</button>
+    <button class="btn btn-danger">Remove</button>
+    <button class="btn btn-success">Done</button>
 </div>
 </body>
 <script type="text/javascript" src="js/module.js"></script>
