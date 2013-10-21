@@ -15,27 +15,22 @@
 </head>
 <body>
 <div id="application" ng-controller="appCtrl">
-    <div id="header">
-        <div id="heading"><h4>{{heading | uppercase}}</h4></div>
-        <div id="dateContainer"><h5>{{date | date}}</h5></div>
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <div id="buttonsContainer">
+                    <button id="edit" class="btn btn-warning" ng-click="toggleEditable()"><span class="icon-edit icon-white"></span>Edit</button>
+                    <button id="remove" class="btn btn-danger"><span class="icon-remove icon-white"></span>Remove</button>
+                    <button id="cart" class="btn btn-success" disabled><span class="icon-shopping-cart icon-white"></span>Cart</button>
+                </div>
+                <div id="heading"><h4>{{heading | uppercase}}</h4></div>
+                <div id="dateContainer"><h5>{{date | date}}</h5></div>
+            </div>
+        </div>
     </div>
-    <table class="table table-hover">
-        <tr>
-            <th style="width: 5%">No.</th>
-            <th>Item</th>
-            <th>Quantity</th>
-            <th>Status</th>
-        </tr>
-        <tr ng-repeat="product in products | range:10">
-            <td ng-show="product.item || product.quantity">{{$index+1}}</td>
-            <td><div contenteditable="{{isEditable}}" ng-model="product.item">{{product.item}}</div></td>
-            <td><div contenteditable="{{isEditable}}" ng-model="product.quantity">{{product.quantity}}</div></td>
-            <td style="text-align: center"><input type="checkbox" ng-model="product.status" ng-show="product.item || product.quantity"></td>
-        </tr>
-    </table>
-    <button class="btn btn-warning">Edit</button>
-    <button class="btn btn-danger">Remove</button>
-    <button class="btn btn-success">Done</button>
+    <div ng-view></div>
+
 </div>
 </body>
 <script type="text/javascript" src="js/module.js"></script>

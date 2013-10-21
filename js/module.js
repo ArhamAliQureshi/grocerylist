@@ -8,7 +8,8 @@ appModule
     .config(function($routeProvider){
         $routeProvider
             .when('/',{
-
+                templateUrl: 'views/list.html',
+                controller: 'listCtrl'
             })
     });
 
@@ -33,26 +34,16 @@ appModule
 //                ctrl.$setViewValue(element.html()); //This line is commented because causing problem when inner HTML having angular object.
             }
         };
-    })
-    .directive('inputdiv', function() {
-        return {
-            restrict: 'A',
-            link: function(scope, element, attrs){
-
-                element.bind('click',function(){
-                    scope.$eval(attrs.inputdiv);
-                });
-            }
-        };
     });
+
 
 
 appModule
     .filter('range', function() {
         return function(input, total) {
             total = parseInt(total);
-            var newItem = {item:'', quantity:'', status: false, unitPrice:'', cost:''};
             while(input.length<total){
+                var newItem = {item:'', quantity:'', status: false, unitPrice:'', cost:''};
                 input.push(newItem);
             }
             return input;
@@ -63,8 +54,35 @@ appModule
     .controller('appCtrl',function($scope){
         $scope.title = "GROCERIES LIST";
         $scope.heading = "GROCERIES";
-        $scope.isEditable = true;
         $scope.date = $scope.date || new Date();
+        $scope.isEditable = false;
+
+        $scope.toggleEditable = function (){
+
+            $scope.isEditable = !$scope.isEditable;
+            var target = event.target;
+            if($(target).is("span")){ target = $(target).parent();} //This will fix bug of Glyphicons click.
+            var buttonInnerHTMl;
+            switch ($scope.isEditable){
+                case true:
+                    $(target).removeClass("btn-warning");
+                    $(target).addClass("btn-success");
+                    buttonInnerHTMl = '<span class="icon-check icon-white"></span>Done';
+                    $(target).html(buttonInnerHTMl);
+                    break;
+                case false:
+                    $(target).removeClass("btn-success");
+                    $(target).addClass("btn-warning");
+                    buttonInnerHTMl = '<span class="icon-edit icon-white"></span>Edit';
+                    $(target).html(buttonInnerHTMl);
+                    break;
+            }
+            $('#cart').prop('disabled', $scope.isEditable);
+
+        };
+    })
+    .controller('listCtrl',function($scope){
+
         $scope.products = [
             {item:'Potato', quantity:'3', status: false, unitPrice:'', cost:''},
             {item:'Tomato', quantity:'1', status: false, unitPrice:'', cost:''},
@@ -72,4 +90,5 @@ appModule
         ];
         window.test = $scope.products;
     });
+
 

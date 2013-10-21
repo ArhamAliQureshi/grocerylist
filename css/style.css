@@ -1,5 +1,5 @@
 body{
- background-image: url("../img/background.jpg");
+ background-image: url("../img/body_bg.gif");
 }
 #application{
 
@@ -10,21 +10,41 @@ body{
     border-width: 1px;
     border-color: dodgerblue;
 }
-
-#header{
-    text-align: center;
+.navbar-inner{
+    background-image: url("../img/Footer_bg.gif");
 }
-#header>#heading{
+table{
+    table-layout: fixed;
+    border: 2px solid black;
+    color: #ffffff;
+}
+td, th {
+    height: 20px;
+    border: 2px solid black;
+}
+.table-hover tbody tr:hover>td, .table-hover tbody tr:hover>th{
+    background-color: #69C9D4;
+}
+.navbar-inner>.container{
+    text-align: center;
+    color: #ffffff;
+}
+.container>#buttonsContainer{
+    float: left;
+    display:inline-block;
+    width: 247px;
+}
+
+.container>#heading{
     display:inline-block;
 }
-#header>#dateContainer{
+.container>#dateContainer{
+    margin-right: 10px;
     display:inline-block;
     float: right;
     text-decoration: underline;
 }
 
-td>input[type="text"]{
-    width: 90px;
-    margin-bottom: 0px;
-    margin-top: 0px;
+div[contenteditable=true]{
+    width: 100%;
 }
