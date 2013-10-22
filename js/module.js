@@ -49,9 +49,32 @@ appModule
             return input;
         };
     });
-
 appModule
-    .controller('appCtrl',function($scope){
+    .service('dataService',function($rootScope){
+        var activeRow = null;       //Contains the index of the click row in edit mode.
+        var products = [
+            {item:'Potato', quantity:'3', status: false, unitPrice:'', cost:''},
+            {item:'Tomato', quantity:'1', status: false, unitPrice:'', cost:''},
+            {item:'Banana', quantity:'2', status: false, unitPrice:'', cost:''}
+        ];
+        return{
+            products: function(){
+                return products;
+                $rootScope.$broadcast('productsChanged', products);
+            },
+            activeRow: function(value){
+                if(!isNaN(parseInt(value))){
+                    activeRow = value;
+                    console.log("THIS WHAT: "+activeRow);
+
+                }
+                else{ console.log("THIS ME: "+activeRow);
+                    return activeRow;}
+            }
+        }
+    });
+appModule
+    .controller('appCtrl',function($scope, dataService){
         $scope.title = "GROCERIES LIST";
         $scope.heading = "GROCERIES";
         $scope.date = $scope.date || new Date();
@@ -80,14 +103,24 @@ appModule
             $('#cart').prop('disabled', $scope.isEditable);
 
         };
-    })
-    .controller('listCtrl',function($scope){
 
-        $scope.products = [
-            {item:'Potato', quantity:'3', status: false, unitPrice:'', cost:''},
-            {item:'Tomato', quantity:'1', status: false, unitPrice:'', cost:''},
-            {item:'Banana', quantity:'2', status: false, unitPrice:'', cost:''}
-        ];
+        $scope.removeRow = function(){
+            $scope.activeRow = dataService.activeRow();
+            dataService.products().splice($scope.activeRow,1);
+        };
+
+    })
+    .controller('listCtrl',function($scope, dataService){
+        $scope.products = dataService.products();       //Get products Array from service.
+
+        $scope.clickRow = function(element){
+            var index = element.$index;
+            console.log('index: '+ index);
+            var activeRow = $scope.isEditable == true? index : false;        //Check if row clicked in edit mode. If not set activeRow = false. Otherwise it will have the array $index value.
+            console.log('activeRow: '+ activeRow);
+            dataService.activeRow(activeRow);
+        };
+
         window.test = $scope.products;
     });
 

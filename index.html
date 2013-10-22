@@ -21,8 +21,8 @@
             <div class="container">
                 <div id="buttonsContainer">
                     <button id="edit" class="btn btn-warning" ng-click="toggleEditable()"><span class="icon-edit icon-white"></span>Edit</button>
-                    <button id="remove" class="btn btn-danger"><span class="icon-remove icon-white"></span>Remove</button>
-                    <button id="cart" class="btn btn-success" disabled><span class="icon-shopping-cart icon-white"></span>Cart</button>
+                    <button id="remove" class="btn btn-danger" ng-click="removeRow()"><span class="icon-remove icon-white"></span>Remove</button>
+                    <button id="cart" class="btn btn-success"><span class="icon-shopping-cart icon-white"></span>Cart</button>
                 </div>
                 <div id="heading"><h4>{{heading | uppercase}}</h4></div>
                 <div id="dateContainer"><h5>{{date | date}}</h5></div>
