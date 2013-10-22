@@ -8,6 +8,10 @@ appModule
     .config(function($routeProvider){
         $routeProvider
             .when('/',{
+                templateUrl: 'views/homepage.html',
+                controller: 'listCtrl'
+            })
+            .when('/list',{
                 templateUrl: 'views/list.html',
                 controller: 'listCtrl'
             })
