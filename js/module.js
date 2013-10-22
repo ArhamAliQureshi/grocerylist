@@ -37,7 +37,6 @@ appModule
     });
 
 
-
 appModule
     .filter('range', function() {
         return function(input, total) {
@@ -51,26 +50,22 @@ appModule
     });
 appModule
     .service('dataService',function($rootScope){
-        var activeRow = null;       //Contains the index of the click row in edit mode.
         var products = [
             {item:'Potato', quantity:'3', status: false, unitPrice:'', cost:''},
             {item:'Tomato', quantity:'1', status: false, unitPrice:'', cost:''},
             {item:'Banana', quantity:'2', status: false, unitPrice:'', cost:''}
         ];
+        var activeRow = products.length;       //Contains the index of the click row in edit mode.
         return{
             products: function(){
                 return products;
                 $rootScope.$broadcast('productsChanged', products);
             },
             activeRow: function(value){
-                if(!isNaN(parseInt(value))){
-                    activeRow = value;
-                    console.log("THIS WHAT: "+activeRow);
-
-                }
-                else{ console.log("THIS ME: "+activeRow);
+                if(!isNaN(parseInt(value))){return activeRow = value;}
+                else
                     return activeRow;}
-            }
+
         }
     });
 appModule
@@ -94,6 +89,7 @@ appModule
                     $(target).html(buttonInnerHTMl);
                     break;
                 case false:
+                    dataService.activeRow(dataService.products().length); //This is used to avoid any unwanted delete events.
                     $(target).removeClass("btn-success");
                     $(target).addClass("btn-warning");
                     buttonInnerHTMl = '<span class="icon-edit icon-white"></span>Edit';
@@ -115,9 +111,7 @@ appModule
 
         $scope.clickRow = function(element){
             var index = element.$index;
-            console.log('index: '+ index);
             var activeRow = $scope.isEditable == true? index : false;        //Check if row clicked in edit mode. If not set activeRow = false. Otherwise it will have the array $index value.
-            console.log('activeRow: '+ activeRow);
             dataService.activeRow(activeRow);
         };
 
