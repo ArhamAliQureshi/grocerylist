@@ -1,0 +1,18 @@
+<table class="table table-hover">
+    <tr>
+        <th style="width: 5%">No.</th>
+        <th>Item</th>
+        <th style="text-align: center;">Quantity</th>
+        <th style="text-align: center;">Unit price</th>
+        <th style="text-align: center;">Cost</th>
+        <th style="text-align: center">Status</th>
+    </tr>
+    <tr ng-repeat="product in products" ng-click="clickRow(this)">
+        <td id="index"><div ng-show="product.item || product.quantity">{{$index+1}}</div></td>
+        <td id="item"><div contenteditable="{{isEditable}}" ng-model="product.item">{{product.item}}</div></td>
+        <td id="quantity" style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.quantity">{{product.quantity}}</div></td>
+        <td id="unitPrice" style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.unitPrice">{{product.unitPrice}}</div></td>
+        <td id="cost" style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.cost">{{product.cost}}</div></td>
+        <td id="status" style="text-align: center"><input type="checkbox" ng-model="product.status" ng-show="product.item || product.quantity"></td>
+    </tr>
+</table>

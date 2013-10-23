@@ -3,12 +3,10 @@
         <th style="width: 5%">No.</th>
         <th style="width: 34%">Item</th>
         <th style="width: 8%; text-align: center;">Quantity</th>
-        <th style="width: 5%; text-align: center">Status</th>
     </tr>
     <tr ng-repeat="product in products | range:10" ng-click="clickRow(this)">
         <td><div ng-show="product.item || product.quantity">{{$index+1}}</div></td>
         <td><div contenteditable="{{isEditable}}" ng-model="product.item">{{product.item}}</div></td>
         <td style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.quantity">{{product.quantity}}</div></td>
-        <td style="text-align: center"><input type="checkbox" ng-model="product.status" ng-show="product.item || product.quantity"></td>
     </tr>
 </table>

@@ -15,6 +15,10 @@ appModule
                 templateUrl: 'views/list.html',
                 controller: 'listCtrl'
             })
+            .when('/cart/:cartNumber',{
+                templateUrl: 'views/cart.html',
+                controller: 'cartCtrl'
+            })
     });
 
 appModule
@@ -46,7 +50,7 @@ appModule
         return function(input, total) {
             total = parseInt(total);
             while(input.length<total){
-                var newItem = {item:'', quantity:'', status: false, unitPrice:'', cost:''};
+                var newItem = {item:'', quantity: '', status: false, unitPrice: 0, cost: 0};
                 input.push(newItem);
             }
             return input;
@@ -55,9 +59,10 @@ appModule
 appModule
     .service('dataService',function($rootScope){
         var products = [
-            {item:'Potato', quantity:'3', status: false, unitPrice:'', cost:''},
-            {item:'Tomato', quantity:'1', status: false, unitPrice:'', cost:''},
-            {item:'Banana', quantity:'2', status: false, unitPrice:'', cost:''}
+            {item:'Potato', quantity: 3, status: false, unitPrice: 0, cost: 0},
+            {item:'Tomato', quantity: 1, status: false, unitPrice: 0, cost: 0},
+            {item:'Banana', quantity: 2, status: false, unitPrice: 0, cost: 0},
+
         ];
         var activeRow = products.length;       //Contains the index of the click row in edit mode.
         return{
@@ -104,6 +109,8 @@ appModule
 
         };
 
+        $scope.cartNumber = 1;
+
         $scope.removeRow = function(){
             $scope.activeRow = dataService.activeRow();
             dataService.products().splice($scope.activeRow,1);
@@ -111,6 +118,17 @@ appModule
 
     })
     .controller('listCtrl',function($scope, dataService){
+        $scope.products = dataService.products();       //Get products Array from service.
+
+        $scope.clickRow = function(element){
+            var index = element.$index;
+            var activeRow = $scope.isEditable == true? index : false;        //Check if row clicked in edit mode. If not set activeRow = false. Otherwise it will have the array $index value.
+            dataService.activeRow(activeRow);
+        };
+
+        window.test = $scope.products;
+    })
+    .controller('cartCtrl',function($scope, dataService){
         $scope.products = dataService.products();       //Get products Array from service.
 
         $scope.clickRow = function(element){
