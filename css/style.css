@@ -50,3 +50,15 @@ td, th {
 div[contenteditable=true]{
     width: 100%;
 }
+
+
+
+
+
+
+
+
+
+.itemBought{
+    background-color: green;
+}

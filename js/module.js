@@ -21,6 +21,8 @@ appModule
             })
     });
 
+
+
 appModule
     .directive('contenteditable', function() {
         return {
@@ -42,6 +44,14 @@ appModule
 //                ctrl.$setViewValue(element.html()); //This line is commented because causing problem when inner HTML having angular object.
             }
         };
+    })
+    .directive('ngClass',function(){
+        return{
+//            require: 'ngModel',
+            link: function(scope, element, attrs, ctrl) {
+                if(scope.product.status==true){scope.itemBought = true}
+            }
+        }
     });
 
 
@@ -50,12 +60,15 @@ appModule
         return function(input, total) {
             total = parseInt(total);
             while(input.length<total){
-                var newItem = {item:'', quantity: '', status: false, unitPrice: 0, cost: 0};
+                var newItem = {item:'', quantity: '', status: false, unitPrice: '', cost: ''};
                 input.push(newItem);
             }
             return input;
         };
     });
+
+
+
 appModule
     .service('dataService',function($rootScope){
         var products = [
@@ -77,6 +90,12 @@ appModule
 
         }
     });
+
+
+
+
+
+
 appModule
     .controller('appCtrl',function($scope, dataService){
         $scope.title = "GROCERIES LIST";
@@ -119,7 +138,7 @@ appModule
     })
     .controller('listCtrl',function($scope, dataService){
         $scope.products = dataService.products();       //Get products Array from service.
-
+        $scope.rowColor = '{color: green}';
         $scope.clickRow = function(element){
             var index = element.$index;
             var activeRow = $scope.isEditable == true? index : false;        //Check if row clicked in edit mode. If not set activeRow = false. Otherwise it will have the array $index value.
