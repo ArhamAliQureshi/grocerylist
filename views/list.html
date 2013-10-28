@@ -1,12 +1,12 @@
 <table class="table table-hover">
     <tr>
-        <th style="width: 5%">No.</th>
-        <th style="width: 34%">Item</th>
-        <th style="width: 8%; text-align: center;">Quantity</th>
+        <th style="width: 15%">No.</th>
+        <th style="width: 65%">Item</th>
+        <th style="width: 25%; text-align: center;">Quantity</th>
     </tr>
     <tr ng-class="{itemBought: itemBought}" ng-repeat="product in products | range:10" ng-click="clickRow(this)">
         <td><div ng-show="product.item || product.quantity">{{$index+1}}</div></td>
         <td><div contenteditable="{{isEditable}}" ng-model="product.item">{{product.item}}</div></td>
-        <td style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.quantity">{{product.quantity}}</div></td>
+        <td style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.quantity" type="number" onKeypress="if(event.keyCode < 48 || event.keyCode > 57){return false;}">{{product.quantity}}</div></td>
     </tr>
 </table>

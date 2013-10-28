@@ -1,0 +1,16 @@
+<div class="cartsHolder">
+    <ul class="thumbnails">
+        <li ng-click="addNewCart()">
+            <div class="thumbnail">
+                <img src="img/cartIconAdd.png" alt="">
+                <p>Add New Cart</p>
+            </div>
+        </li>
+        <li onclick="location.href='#/cart/{{$index}}'" ng-repeat="cart in cartsArray">
+            <div class="thumbnail">
+                <img src="img/cartIcon.png" alt="">
+                <p>{{cart.name}}</p>
+            </div>
+        </li>
+    </ul>
+</div>

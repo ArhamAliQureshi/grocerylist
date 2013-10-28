@@ -15,6 +15,10 @@ appModule
                 templateUrl: 'views/list.html',
                 controller: 'listCtrl'
             })
+            .when('/carts/',{
+                templateUrl: 'views/carts.html',
+                controller: 'cartsCtrl'
+            })
             .when('/cart/:cartNumber',{
                 templateUrl: 'views/cart.html',
                 controller: 'cartCtrl'
@@ -60,7 +64,7 @@ appModule
         return function(input, total) {
             total = parseInt(total);
             while(input.length<total){
-                var newItem = {item:'', quantity: '', status: false, unitPrice: '', cost: ''};
+                var newItem = {item:'', quantity: '', status: false, unitPrice: '', cost: '', cartID: ''};
                 input.push(newItem);
             }
             return input;
@@ -72,9 +76,9 @@ appModule
 appModule
     .service('dataService',function($rootScope){
         var products = [
-            {item:'Potato', quantity: 3, status: false, unitPrice: 0, cost: 0},
-            {item:'Tomato', quantity: 1, status: false, unitPrice: 0, cost: 0},
-            {item:'Banana', quantity: 2, status: false, unitPrice: 0, cost: 0},
+            {item:'Potato', quantity: 3, status: false, unitPrice: 0, cost: 0, cartID: '0'},
+            {item:'Tomato', quantity: 1, status: false, unitPrice: 0, cost: 0, cartID: '0'},
+            {item:'Banana', quantity: 2, status: false, unitPrice: 0, cost: 0, cartID: '0'}
 
         ];
         var activeRow = products.length;       //Contains the index of the click row in edit mode.
@@ -118,6 +122,7 @@ appModule
                     break;
                 case false:
                     dataService.activeRow(dataService.products().length); //This is used to avoid any unwanted delete events.
+                    $('body').css('zoom','100%');
                     $(target).removeClass("btn-success");
                     $(target).addClass("btn-warning");
                     buttonInnerHTMl = '<span class="icon-edit icon-white"></span>Edit';
@@ -147,7 +152,18 @@ appModule
 
         window.test = $scope.products;
     })
-    .controller('cartCtrl',function($scope, dataService){
+    .controller('cartsCtrl',function($scope, dataService){
+        $scope.products = dataService.products();       //Get products Array from service.
+
+        $scope.cartsArray=[{name:"Babo Baniya"},{name:"Memon Baniya"}]; //Contains the list of carts
+        $scope.addNewCart = function(){         //Called when new cart requested.
+            $scope.cartsArray.push({name:'New Cart'});
+            location.href = '#/cart/'+($scope.cartsArray.length-1);
+        };
+
+    })
+    .controller('cartCtrl',function($scope, $routeParams,dataService){
+        $scope.cartNumber = $routeParams;
         $scope.products = dataService.products();       //Get products Array from service.
 
         $scope.clickRow = function(element){
@@ -155,8 +171,6 @@ appModule
             var activeRow = $scope.isEditable == true? index : false;        //Check if row clicked in edit mode. If not set activeRow = false. Otherwise it will have the array $index value.
             dataService.activeRow(activeRow);
         };
-
-        window.test = $scope.products;
     });
 
 

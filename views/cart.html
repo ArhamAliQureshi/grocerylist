@@ -7,7 +7,7 @@
         <th style="text-align: center;">Cost</th>
         <th style="text-align: center">Status</th>
     </tr>
-    <tr ng-repeat="product in products" ng-click="clickRow(this)">
+    <tr ng-repeat="product in products | filter:(cartID==''|| cartID==cartNumber)" ng-click="clickRow(this)">
         <td id="index"><div ng-show="product.item || product.quantity">{{$index+1}}</div></td>
         <td id="item"><div contenteditable="{{isEditable}}" ng-model="product.item">{{product.item}}</div></td>
         <td id="quantity" style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.quantity">{{product.quantity}}</div></td>
