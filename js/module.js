@@ -78,10 +78,10 @@ appModule
         };
     })
     .filter('status', function(){        // This will filter cart item and return items which status == true/false OR cartID == cartNumber.
-        return function(input, attr1, attr2){   //Obj, bool, cartNumber
+        return function(input, bool, cartNumber){   //Obj, bool, cartNumber
             var filtered = [];  //contains the filtered product.
             angular.forEach(input,function(value,key){
-                if(value.status == attr1 || (value.cartID == attr2)){
+                if( (value.status == bool || (value.cartID == cartNumber)&& (value.quantity !='')) ){
                     filtered.push(value);
                 }
             });
@@ -94,22 +94,28 @@ appModule
 appModule
     .service('dataService',function($rootScope){
         var products = [
-            {item:'Potato', quantity: 3, status: false, unitPrice: 0, cost: 0, cartID: '0'},
-            {item:'Tomato', quantity: 1, status: false, unitPrice: 0, cost: 0, cartID: '0'},
-            {item:'Banana', quantity: 2, status: false, unitPrice: 0, cost: 0, cartID: '0'}
+            {item:'Potato', quantity: 3, status: false, unitPrice: 0, cost: 0, cartID: ''},
+            {item:'Tomato', quantity: 1, status: false, unitPrice: 0, cost: 0, cartID: ''},
+            {item:'Banana', quantity: 2, status: false, unitPrice: 0, cost: 0, cartID: ''}
         ];
-        window.test = products;
+        var cartsArray=[{name:"Babo Baniya"},{name:"Memon Baniya"}]; //Contains the list of carts
+
         var activeRow = products.length;       //Contains the index of the click row in edit mode.
         return{
             products: function(){
                 return products;
                 $rootScope.$broadcast('productsChanged', products);
             },
+            cartsArray : function (value){   //If value is passed in function then this value will be push else returns cartsArray.
+                if(value){cartsArray.push(value);}
+                else
+                    return cartsArray;
+
+            },
             activeRow: function(value){
                 if(!isNaN(parseInt(value))){return activeRow = value;}
                 else
                     return activeRow;}
-
         }
     });
 
@@ -170,17 +176,19 @@ appModule
     })
     .controller('cartsCtrl',function($scope, dataService){
         $scope.products = dataService.products();       //Get products Array from service.
-
-        $scope.cartsArray=[{name:"Babo Baniya"},{name:"Memon Baniya"}]; //Contains the list of carts
+        $scope.cartsArray = dataService.cartsArray();
         $scope.addNewCart = function(){         //Called when new cart requested.
-            $scope.cartsArray.push({name:'New Cart'});
+            $scope.cartsArray.push({name:'New Cart'});  //Append new Cart in carts array.
             location.href = '#/cart/'+($scope.cartsArray.length-1);
+            window.testCart = $scope.cartsArray;
         };
 
     })
     .controller('cartCtrl',function($scope, $routeParams,dataService){
         $scope.cartNumber = $routeParams.cartNumber;
         $scope.products = dataService.products();       //Get products Array from service.
+        $scope.totalCost =
+
 
         $scope.clickRow = function(element){
             var index = element.$index;

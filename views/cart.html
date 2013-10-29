@@ -13,6 +13,12 @@
         <td id="quantity" style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.quantity">{{product.quantity}}</div></td>
         <td id="unitPrice" style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.unitPrice">{{product.unitPrice}}</div></td>
         <td id="cost" style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.cost">{{product.cost}}</div></td>
-        <td id="status" style="text-align: center"><input type="checkbox" ng-model="product.status" ng-show="product.item || product.quantity"></td>
+        <td id="status" style="text-align: center"><input type="checkbox" ng-model="product.status" ng-show="product.item || product.quantity" ng-click="product.cartID=cartNumber"></td>
+    </tr>
+    <tr style="background-color: gainsboro">
+        <td colspan="6"><span class="label">Total Cost: {{}}</span></td>
     </tr>
 </table>
+<div style="text-align: center">
+
+</div>
