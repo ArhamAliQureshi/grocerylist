@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa3dfbb6-4245-450b-91c0-04b752b15431" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/cartIcon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/carts.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cart.html" afterPath="$PROJECT_DIR$/views/cart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/list.html" afterPath="$PROJECT_DIR$/views/list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/module.js" afterPath="$PROJECT_DIR$/js/module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="grocerylist.iws" />
@@ -32,33 +27,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="list.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="68" selection-start="376" selection-end="382" vertical-scroll-proportion="-2.3333333" vertical-offset="0" max-vertical-offset="289">
-              <folding>
-                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#1;n#table#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="module.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="module.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="54" selection-start="2496" selection-end="2496" vertical-scroll-proportion="0.0" vertical-offset="1086" max-vertical-offset="3094">
+            <state line="79" column="19" selection-start="2466" selection-end="2472" vertical-scroll-proportion="0.45747802" vertical-offset="1031" max-vertical-offset="3366">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="cart.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/cart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="81" selection-start="364" selection-end="406" vertical-scroll-proportion="0.22869955" vertical-offset="0" max-vertical-offset="669">
+            <state line="9" column="91" selection-start="416" selection-end="416" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="391">
               <folding>
                 <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
@@ -69,28 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/homepage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="14" selection-start="32" selection-end="33" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="170">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="45" selection-start="304" selection-end="304" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="731">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="22" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1649">
+            <state line="6" column="45" selection-start="304" selection-end="304" vertical-scroll-proportion="-1.5384616" vertical-offset="62" max-vertical-offset="731">
               <folding />
             </state>
           </provider>
@@ -126,12 +89,12 @@
         <option value="$PROJECT_DIR$/js/controller.js" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/views/homepage.html" />
-        <option value="$PROJECT_DIR$/views/list.html" />
         <option value="$PROJECT_DIR$/views/carts.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/module.js" />
+        <option value="$PROJECT_DIR$/views/list.html" />
         <option value="$PROJECT_DIR$/views/cart.html" />
+        <option value="$PROJECT_DIR$/js/module.js" />
       </list>
     </option>
   </component>
@@ -167,6 +130,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,19 +193,18 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="vcs.Git" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -256,6 +219,14 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -264,14 +235,6 @@
       <option name="saveOutputToFile" value="false" />
       <option name="showConsoleOnStdErr" value="false" />
       <option name="showConsoleOnStdOut" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
@@ -344,7 +307,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32823366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -381,9 +344,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24857324" sideWeight="0.67064846" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -457,28 +420,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="68" selection-start="376" selection-end="382" vertical-scroll-proportion="-2.3333333" vertical-offset="0" max-vertical-offset="289">
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#1;n#table#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/carts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="22" selection-start="76" selection-end="76" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="45" selection-start="304" selection-end="304" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="731">
           <folding />
         </state>
       </provider>
@@ -490,22 +434,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/module.js">
+    <entry file="file://$PROJECT_DIR$/views/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="54" selection-start="2496" selection-end="2496" vertical-scroll-proportion="0.0" vertical-offset="1086" max-vertical-offset="3094">
+        <state line="6" column="85" selection-start="285" selection-end="285" vertical-scroll-proportion="0.1554878" vertical-offset="0" max-vertical-offset="656">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="81" selection-start="364" selection-end="406" vertical-scroll-proportion="0.22869955" vertical-offset="0" max-vertical-offset="669">
+        <state line="9" column="91" selection-start="416" selection-end="416" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="391">
           <folding>
             <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#4;n#tr#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#5;n#tr#0;n#table#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="45" selection-start="304" selection-end="304" vertical-scroll-proportion="-1.5384616" vertical-offset="62" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="19" selection-start="2466" selection-end="2472" vertical-scroll-proportion="0.45747802" vertical-offset="1031" max-vertical-offset="3366">
+          <folding />
         </state>
       </provider>
     </entry>
