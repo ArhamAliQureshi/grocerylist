@@ -85,6 +85,11 @@ footer.well{
 }
 /*-------carts.html-------*/
 
+/*-------cart.html-------*/
+#totalCost{
+    float: right;
+}
+/*-------cart.html-------*/
 
 
 .itemBought{

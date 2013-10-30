@@ -34,9 +34,9 @@ appModule
             link: function(scope, element, attrs, ctrl) {
                 // view -> model
                 element.bind('blur', function() {
-                    scope.$apply(function() {   //$apply is $eval.
+//                    scope.$apply(function() {   //$apply is $eval.
                         ctrl.$setViewValue(element.html()); //$setViewValue is start of passing a value from the view to the model.
-                    });
+//                    });
                 });
 
                 // model -> view
@@ -53,6 +53,16 @@ appModule
         return{
             link: function(scope, element, attrs, ctrl) {
                 if(scope.product.status==true){scope.itemBought = true}
+            }
+        }
+    })
+    .directive('ngCalculate',function(){
+        return{
+            require: 'ngModel',
+            link: function(scope, element, attrs, ctrl){
+                var cost = scope.$eval(attrs.ngCalculate);
+                ctrl.$setViewValue(cost);
+
             }
         }
     })
@@ -94,10 +104,12 @@ appModule
 appModule
     .service('dataService',function($rootScope){
         var products = [
-            {item:'Potato', quantity: 3, status: false, unitPrice: 0, cost: 0, cartID: ''},
+            {item:'Potato', quantity: 3, status: false, unitPrice: 5, cost: 0, cartID: ''},
             {item:'Tomato', quantity: 1, status: false, unitPrice: 0, cost: 0, cartID: ''},
             {item:'Banana', quantity: 2, status: false, unitPrice: 0, cost: 0, cartID: ''}
         ];
+        window.test = products;
+
         var cartsArray=[{name:"Babo Baniya"},{name:"Memon Baniya"}]; //Contains the list of carts
 
         var activeRow = products.length;       //Contains the index of the click row in edit mode.
@@ -187,8 +199,6 @@ appModule
     .controller('cartCtrl',function($scope, $routeParams,dataService){
         $scope.cartNumber = $routeParams.cartNumber;
         $scope.products = dataService.products();       //Get products Array from service.
-        $scope.totalCost =
-
 
         $scope.clickRow = function(element){
             var index = element.$index;
