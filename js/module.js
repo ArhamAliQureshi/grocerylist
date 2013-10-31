@@ -60,9 +60,17 @@ appModule
         return{
             require: 'ngModel',
             link: function(scope, element, attrs, ctrl){
-                var cost = scope.$eval(attrs.ngCalculate);
-                ctrl.$setViewValue(cost);
+                var cost = scope.$eval(attrs.ngCalculate); //get the equation from attribute.
+                ctrl.$setViewValue(cost);   //Set the ngModel value.
+                scope.updateTotalCost(); //Updated the total cost.
+                scope.$watch('product.unitPrice + product.quantity', function(oldValue,newValue){
+                    if(oldValue!=newValue){
+                        var cost = scope.$eval(attrs.ngCalculate);  //get the equation from attribute.
+                        ctrl.$setViewValue(cost);   //Set the ngModel value.
+                        scope.updateTotalCost();    //Updated the total cost
+                    }
 
+                });
             }
         }
     })
@@ -91,8 +99,10 @@ appModule
         return function(input, bool, cartNumber){   //Obj, bool, cartNumber
             var filtered = [];  //contains the filtered product.
             angular.forEach(input,function(value,key){
-                if( (value.status == bool || (value.cartID == cartNumber)&& (value.quantity !='')) ){
-                    filtered.push(value);
+                if(value.item !=''){        //Will check if the Item is empty
+                    if( value.status == bool || value.cartID == cartNumber){
+                        filtered.push(value);
+                    }
                 }
             });
             return filtered;
@@ -200,6 +210,14 @@ appModule
         $scope.cartNumber = $routeParams.cartNumber;
         $scope.products = dataService.products();       //Get products Array from service.
 
+
+        $scope.updateTotalCost = function(){
+            var totalCost = 0;
+            $.each($scope.products,function(index, value){
+                totalCost+=value.cost;
+            });
+            $scope.totalCost = totalCost;
+        };
         $scope.clickRow = function(element){
             var index = element.$index;
             var activeRow = $scope.isEditable == true? index : false;        //Check if row clicked in edit mode. If not set activeRow = false. Otherwise it will have the array $index value.

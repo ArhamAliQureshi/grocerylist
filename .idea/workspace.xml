@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fa3dfbb6-4245-450b-91c0-04b752b15431" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cart.html" afterPath="$PROJECT_DIR$/views/cart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/module.js" afterPath="$PROJECT_DIR$/js/module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="grocerylist.iws" />
@@ -28,20 +28,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="module.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="module.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.38235295" vertical-offset="828" max-vertical-offset="3672">
+            <state line="70" column="21" selection-start="2662" selection-end="2662" vertical-scroll-proportion="0.0" vertical-offset="845" max-vertical-offset="3978">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="cart.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/cart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="54" selection-start="984" selection-end="984" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="493">
-              <folding />
+            <state line="22" column="4" selection-start="1480" selection-end="1480" vertical-scroll-proportion="0.57186544" vertical-offset="0" max-vertical-offset="654">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,7 +60,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="22" selection-start="1538" selection-end="1538" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="748">
+            <state line="6" column="46" selection-start="312" selection-end="312" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="748">
               <folding />
             </state>
           </provider>
@@ -96,10 +98,10 @@
         <option value="$PROJECT_DIR$/views/homepage.html" />
         <option value="$PROJECT_DIR$/views/carts.html" />
         <option value="$PROJECT_DIR$/views/list.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/views/cart.html" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/module.js" />
+        <option value="$PROJECT_DIR$/views/cart.html" />
       </list>
     </option>
   </component>
@@ -239,13 +241,13 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="Errors" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../work/VOD" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -260,6 +262,14 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -268,14 +278,6 @@
       <option name="saveOutputToFile" value="false" />
       <option name="showConsoleOnStdErr" value="false" />
       <option name="showConsoleOnStdOut" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
@@ -453,6 +455,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="46" selection-start="312" selection-end="312" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="89" column="17" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.0" vertical-offset="939" max-vertical-offset="1734">
@@ -460,24 +469,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="22" selection-start="1538" selection-end="1538" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="748">
+        <state line="70" column="21" selection-start="2662" selection-end="2662" vertical-scroll-proportion="0.0" vertical-offset="845" max-vertical-offset="3978">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="54" selection-start="984" selection-end="984" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="493">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.38235295" vertical-offset="828" max-vertical-offset="3672">
-          <folding />
+        <state line="22" column="4" selection-start="1480" selection-end="1480" vertical-scroll-proportion="0.57186544" vertical-offset="0" max-vertical-offset="654">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
