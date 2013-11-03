@@ -11,6 +11,10 @@ appModule
                 templateUrl: 'views/homepage.html',
                 controller: 'listCtrl'
             })
+            .when('/newList',{
+                templateUrl: 'views/list.html',
+                controller: 'newListCtrl'
+            })
             .when('/list',{
                 templateUrl: 'views/list.html',
                 controller: 'listCtrl'
@@ -122,6 +126,7 @@ appModule
         var cartsArray=[{name:"Babo Baniya"},{name:"Memon Baniya"}]; //Contains the list of carts
 
         var activeRow = products.length;       //Contains the index of the click row in edit mode.
+
         return{
             products: function(){
                 return products;
@@ -139,10 +144,6 @@ appModule
                     return activeRow;}
         }
     });
-
-
-
-
 
 
 appModule
@@ -184,7 +185,34 @@ appModule
         };
 
     })
-    .controller('listCtrl',function($scope, dataService){
+    .controller('newListCtrl',function($scope,  $rootScope, dataService){
+        $scope.products = dataService.products();       //Get products Array from service.
+//        $scope.products.splice(0,$scope.products.length);
+        $scope.products.length = 0;
+        $scope.rowColor = '{color: green}';
+        $scope.clickRow = function(element){
+            var index = element.$index;
+            var activeRow = $scope.isEditable == true? index : false;        //Check if row clicked in edit mode. If not set activeRow = false. Otherwise it will have the array $index value.
+            dataService.activeRow(activeRow);
+        };
+
+        $scope.$on("$routeChangeStart",function(event, next, current){  //Event fires when route is about to change.
+            Array.prototype.clean = function() {        // Clean remove elements from array which don't have item. Need to use this because for paging in list.html appended many empty items.
+                for (var i = 0; i < this.length; i++) {
+                    if (this[i].item == '') {
+                        this.splice(i, 1);
+                        i--;
+                    }
+                }
+                return this;
+            };
+            if(next.templateUrl!=current.templateUrl){  //Check if next route is not same as current route.
+                $scope.products.clean();    // Clean remove elements from array which don't have item.
+            }
+        });
+
+    })
+    .controller('listCtrl',function($scope,  $rootScope, dataService){
         $scope.products = dataService.products();       //Get products Array from service.
         $scope.rowColor = '{color: green}';
         $scope.clickRow = function(element){
@@ -193,7 +221,21 @@ appModule
             dataService.activeRow(activeRow);
         };
 
-        window.test = $scope.products;
+        $scope.$on("$routeChangeStart",function(event, next, current){  //Event fires when route is about to change.
+            Array.prototype.clean = function() {        // Clean remove elements from array which don't have item. Need to use this because for paging in list.html appended many empty items.
+                for (var i = 0; i < this.length; i++) {
+                    if (this[i].item == '') {
+                        this.splice(i, 1);
+                        i--;
+                    }
+                }
+                return this;
+            };
+            if(next.templateUrl!=current.templateUrl){  //Check if next route is not same as current route.
+                $scope.products.clean();    // Clean remove elements from array which don't have item.
+            }
+        });
+
     })
     .controller('cartsCtrl',function($scope, dataService){
         $scope.products = dataService.products();       //Get products Array from service.
@@ -203,7 +245,6 @@ appModule
             location.href = '#/cart/'+($scope.cartsArray.length-1);
             window.testCart = $scope.cartsArray;
         };
-
     })
     .controller('cartCtrl',function($scope, $routeParams,dataService){
         $scope.cartNumber = $routeParams.cartNumber;    //Get Cart number from URL.
