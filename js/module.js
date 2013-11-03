@@ -28,15 +28,15 @@ appModule
 
 
 appModule
-    .directive('contenteditable', function() {
+    .directive('contenteditable', function($rootScope) {
         return {
             require: 'ngModel',
             link: function(scope, element, attrs, ctrl) {
                 // view -> model
-                element.bind('blur', function() {
-//                    scope.$apply(function() {   //$apply is $eval.
+                element.bind('keyup', function() {
+                    scope.$apply(function() {   //$apply is $eval. updates all views of that model.
                         ctrl.$setViewValue(element.html()); //$setViewValue is start of passing a value from the view to the model.
-//                    });
+                    });
                 });
 
                 // model -> view
@@ -69,7 +69,6 @@ appModule
                         ctrl.$setViewValue(cost);   //Set the ngModel value.
                         scope.updateTotalCost();    //Updated the total cost
                     }
-
                 });
             }
         }
@@ -207,14 +206,19 @@ appModule
 
     })
     .controller('cartCtrl',function($scope, $routeParams,dataService){
-        $scope.cartNumber = $routeParams.cartNumber;
+        $scope.cartNumber = $routeParams.cartNumber;    //Get Cart number from URL.
         $scope.products = dataService.products();       //Get products Array from service.
 
+
+        $scope.updateProductStatus = function(product){
+            product.cartID = $scope.cartNumber; //This get Cart number from URL and set it in products.
+            $scope.updateTotalCost();   //Calculate the cost when check box clicked.
+        };
 
         $scope.updateTotalCost = function(){
             var totalCost = 0;
             $.each($scope.products,function(index, value){
-                totalCost+=value.cost;
+                if(value.status){totalCost+=value.cost;} //Will check if product is bought then will add its cost to total cost.
             });
             $scope.totalCost = totalCost;
         };

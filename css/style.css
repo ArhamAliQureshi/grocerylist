@@ -86,8 +86,22 @@ footer.well{
 /*-------carts.html-------*/
 
 /*-------cart.html-------*/
+#totalCostDiv{
+    background-image: url("../img/divBG.png");
+    background-color: gainsboro;
+}
+#totalCostDiv:hover>td{
+    background-color: transparent !important;
+}
 #totalCost{
     float: right;
+}
+.cartLabels{
+    font-size: 18px;
+    font-weight: bold;
+}
+.cartInput{
+    margin-bottom: 0px!important;
 }
 /*-------cart.html-------*/
 
