@@ -122,12 +122,15 @@ appModule
             {item:'Banana', quantity: 2, status: false, unitPrice: 0, cost: 0, cartID: ''}
         ];
         window.test = products;
-
+        var nav= {listBtn: true, editBtn: true, removeBtn: true, cartBtn: true};
         var cartsArray=[{name:"Babo Baniya"},{name:"Memon Baniya"}]; //Contains the list of carts
 
         var activeRow = products.length;       //Contains the index of the click row in edit mode.
 
         return{
+            getNav: function(){
+              return nav;
+            },
             products: function(){
                 return products;
                 $rootScope.$broadcast('productsChanged', products);
@@ -151,6 +154,7 @@ appModule
         $scope.title = "GROCERIES LIST";
         $scope.heading = "GROCERIES";
         $scope.date = $scope.date || new Date();
+        $scope.nav = dataService.getNav();
         $scope.isEditable = false;
 
         $scope.toggleEditable = function (){
@@ -187,7 +191,7 @@ appModule
     })
     .controller('newListCtrl',function($scope,  $rootScope, dataService){
         $scope.products = dataService.products();       //Get products Array from service.
-//        $scope.products.splice(0,$scope.products.length);
+        $scope.nav = dataService.getNav();
         $scope.products.length = 0;
         $scope.rowColor = '{color: green}';
         $scope.clickRow = function(element){
@@ -213,6 +217,7 @@ appModule
 
     })
     .controller('listCtrl',function($scope,  $rootScope, dataService){
+        $scope.nav = dataService.getNav();
         $scope.products = dataService.products();       //Get products Array from service.
         $scope.rowColor = '{color: green}';
         $scope.clickRow = function(element){
@@ -238,7 +243,7 @@ appModule
 
     })
     .controller('cartsCtrl',function($scope, dataService){
-        $scope.products = dataService.products();       //Get products Array from service.
+        $scope.nav = dataService.getNav();
         $scope.cartsArray = dataService.cartsArray();
         $scope.addNewCart = function(){         //Called when new cart requested.
             $scope.cartsArray.push({name:'New Cart'});  //Append new Cart in carts array.
@@ -247,6 +252,7 @@ appModule
         };
     })
     .controller('cartCtrl',function($scope, $routeParams,dataService){
+        $scope.nav = dataService.getNav();
         $scope.cartNumber = $routeParams.cartNumber;    //Get Cart number from URL.
         $scope.products = dataService.products();       //Get products Array from service.
 
