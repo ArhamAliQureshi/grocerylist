@@ -7,6 +7,6 @@
     <tr ng-class="{itemBought: itemBought}" ng-repeat="product in products | range:10" ng-click="clickRow(this)">
         <td><div ng-show="product.item || product.quantity">{{$index+1}}</div></td>
         <td><div contenteditable="{{isEditable}}" ng-model="product.item">{{product.item}}</div></td>
-        <td style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.quantity" type="number" onKeypress="if(event.keyCode < 48 || event.keyCode > 57){return false;}">{{product.quantity}}</div></td>
+        <td style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.quantity" onKeypress="if(event.keyCode == 46 || event.keyCode < 48 || event.keyCode > 57){return false;}">{{product.quantity}}</div></td>
     </tr>
 </table>

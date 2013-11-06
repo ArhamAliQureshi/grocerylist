@@ -10,8 +10,8 @@
     <tr ng-repeat="product in products | status:false:cartNumber" ng-click="clickRow(this)">
         <td id="index"><div ng-show="product.item || product.quantity">{{$index+1}}</div></td>
         <td id="item"><div contenteditable="{{isEditable}}" ng-model="product.item">{{product.item}}</div></td>
-        <td id="quantity" style="text-align: center"><div contenteditable="{{isEditable}}" ng-model="product.quantity">{{product.quantity}}</div></td>
-        <td id="unitPrice" style="text-align: center"><div contenteditable="true" ng-model="product.unitPrice">{{product.unitPrice}}</div></td>
+        <td id="quantity" style="text-align: center"><div contenteditable="{{isEditable}}" onKeypress="if(event.keyCode < 48 || event.keyCode > 57 || event.keyCode ==){return false;}" ng-model="product.quantity">{{product.quantity}}</div></td>
+        <td id="unitPrice" style="text-align: center"><div contenteditable="true" onKeypress="if(event.keyCode < 48 || event.keyCode > 57){return false;}" ng-model="product.unitPrice" >{{product.unitPrice}}</div></td>
         <td id="cost" style="text-align: center"><div ng-calculate="product.unitPrice*product.quantity" ng-model="product.cost">{{product.cost | currency}}</div></td>
         <td id="status" style="text-align: center"><input type="checkbox" ng-model="product.status" ng-show="product.item || product.quantity" ng-click="updateProductStatus(product)"></td>
     </tr>
