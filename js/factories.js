@@ -1,6 +1,6 @@
 
 appModule
-    .factory('routeChangeStart',function(dataService){     //Function that need to be performed when route changes are defined here.
+    .factory('routeChangeFactory',function(dataService){     //Function that need to be performed when route changes are defined here.
         return{
             removeEmptyItem: function(event, next, current){    // Clean remove elements from array which don't have item. Need to use this because for paging in list.html we appended many empty items.
                 Array.prototype.clean = function() {
@@ -18,4 +18,9 @@ appModule
             }
 
         };
+    })
+    .factory('readXML',function(dataService){
+        return{
+
+        }
     });

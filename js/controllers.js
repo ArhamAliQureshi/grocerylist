@@ -38,9 +38,8 @@ appModule
                 dataService.products().splice($scope.activeRow,1);
             }
         };
-
     })
-    .controller('newListCtrl',function($scope,  $rootScope, routeChangeStart, dataService){
+    .controller('newListCtrl',function($scope,  $rootScope, routeChangeFactory, dataService){
         $scope.products = dataService.products();       //Get products Array from service.
         $scope.nav = dataService.getNav();
         $scope.products.length = 0;
@@ -52,11 +51,10 @@ appModule
         };
 
         $scope.$on("$routeChangeStart",function(event, next, current){  //Event fires when route is about to change.
-            routeChangeStart.removeEmptyItem(event, next, current);
+            routeChangeFactory.removeEmptyItem(event, next, current);
         });
-
     })
-    .controller('listCtrl',function($scope,  $rootScope, routeChangeStart, dataService){
+    .controller('listCtrl',function($scope,  $rootScope, routeChangeFactory, dataService){
         $scope.nav = dataService.getNav();
         $scope.products = dataService.products();       //Get products Array from service.
         $scope.rowColor = '{color: green}';
@@ -67,9 +65,8 @@ appModule
         };
 
         $scope.$on("$routeChangeStart",function(event, next, current){  //Event fires when route is about to change.
-            routeChangeStart.removeEmptyItem(event, next, current);
+            routeChangeFactory.removeEmptyItem(event, next, current);
         });
-
     })
     .controller('cartsCtrl',function($scope, dataService){
         $scope.nav = dataService.getNav();      //Navigation button ng-show API.
@@ -77,13 +74,18 @@ appModule
         $scope.addNewCart = function(){         //Called when new cart requested.
             $scope.cartsArray.push({name:'New Cart'});  //Append new Cart in carts array.
             location.href = '#/cart/'+($scope.cartsArray.length-1);
-            window.testCart = $scope.cartsArray;
         };
+        window.testCarts = $scope.cartsArray;
     })
     .controller('cartCtrl',function($scope, $routeParams,dataService){
         $scope.nav = dataService.getNav();
         $scope.cartNumber = $routeParams.cartNumber;    //Get Cart number from URL.
         $scope.products = dataService.products();       //Get products Array from service.
+        $scope.cart = dataService.cartsArray()[$scope.cartNumber];
+
+        $scope.$watch('cart.paidCash',function(e){
+            $scope.cart.paidCash=e;
+        });
 
 
         $scope.updateProductStatus = function(product){

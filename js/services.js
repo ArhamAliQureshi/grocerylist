@@ -7,7 +7,7 @@ appModule
         ];
         window.test = products;
         var nav= {listBtn: true, editBtn: true, removeBtn: true, cartBtn: true};
-        var cartsArray=[{name:"Babo Baniya"},{name:"Memon Baniya"}]; //Contains the list of carts
+        var cartsArray=[{name:"Babo Baniya", paidCash: '0'},{name:"Memon Baniya", paidCash: '0'}]; //Contains the list of carts
 
         var activeRow = products.length;       //Contains the index of the click row in edit mode.
 
