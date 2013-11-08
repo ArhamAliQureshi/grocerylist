@@ -20,6 +20,6 @@
     </tr>
 </table>
 <div class="well" id="cartLabels">
-        <label class="cartLabels label label-info" for="paid">Cash Paid: $<input class="cartInput input input-medium" id="paid" type="text" ng-model="cart.paidCash"> - {{totalCost}} {Total Cost}</label><br>
-        <label class="cartLabels label label-success">Balance: {{cart.paidCash - totalCost | currency}}</label><br>
+        <label class="cartLabels label label-info" for="paid">Cash Paid: $<input class="cartInput input input-mini" id="paid" type="text" ng-model="cart.paidCash"></label><br>
+        <label class="cartLabels label" ng-class="{'label-success': balance>0,'label-important': balance<0}">Balance: {{balance = cart.paidCash - totalCost | currency}}</label><br> <!-- ngClass will check if the balance having remainder then will display green label other wise will display red label  -->
 </div>

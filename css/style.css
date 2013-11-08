@@ -56,10 +56,11 @@ div[contenteditable=true]{
 }
 
 footer.well{
+    position: fixed !important;
     text-align:  center;
     background-image: url("../img/Footer_bg.gif");
-    padding: 0px 0px 5px;
-    margin-left: 0px;
+    padding: 0 0 5px;
+    margin-left: 0;
     margin-right: 0;
 }
 .container>#buttonsContainer{

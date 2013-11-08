@@ -82,13 +82,14 @@ appModule
         $scope.cartNumber = $routeParams.cartNumber;    //Get Cart number from URL.
         $scope.products = dataService.products();       //Get products Array from service.
         $scope.cart = dataService.cartsArray()[$scope.cartNumber];
+        $scope.totalCost = 0;
 
-        $scope.$watch('cart.paidCash',function(e){
+
+        $scope.$watch('cart.paidCash',function(e){  //Watches the change in paid cash field.
             $scope.cart.paidCash=e;
         });
 
-
-        $scope.updateProductStatus = function(product){
+        $scope.updateProductStatus = function(product){ //Executed when product checkbox clicked.
             product.cartID = $scope.cartNumber; //This get Cart number from URL and set it in products.
             $scope.updateTotalCost();   //Calculate the cost when check box clicked.
         };
@@ -96,11 +97,11 @@ appModule
         $scope.updateTotalCost = function(){
             var totalCost = 0;
             $.each($scope.products,function(index, value){
-                if(value.status){totalCost+=value.cost;} //Will check if product is bought then will add its cost to total cost.
+                if(value.status && value.cartID==$scope.cartNumber){totalCost+=value.cost;} //Will check if product is bought then will add its cost to total cost.
             });
             $scope.totalCost = totalCost;
         };
-        $scope.clickRow = function(element){
+        $scope.clickRow = function(element){    //Executed when table's any row is clicked.
             var index = element.$index;
             var activeRow = $scope.isEditable == true? index : false;        //Check if row clicked in edit mode. If not set activeRow = false. Otherwise it will have the array $index value.
             dataService.activeRow(activeRow);
