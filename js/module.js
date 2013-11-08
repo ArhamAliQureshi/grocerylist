@@ -11,6 +11,9 @@ appModule
                 templateUrl: 'views/homepage.html',
                 controller: 'listCtrl'
             })
+            .when('/book',{
+                templateUrl: 'views/book.html'
+            })
             .when('/newList',{
                 templateUrl: 'views/list.html',
                 controller: 'newListCtrl'

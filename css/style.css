@@ -69,11 +69,34 @@ footer.well{
     width: 247px;
 }
 
+/*-------book.html-------*/
+ul#listBtnContainer{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+ul#listBtnContainer>li{
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+}
+#listImg{
+    display: inline-block;
+    background-color: orangered;
+    height: 100%;
+    width: 50px;
+}
+#listText{
+    position: relative;
+    display: inline-block;
+    background-color: #f5f5f5;
+    margin-left: 50px;
+    height: 100%;
+    width: 100%;
+}
+/*-------book.html-------*/
+
 
 /*-------carts.html-------*/
-.cartsHolder{
-    /*margin-left: 10px;*/
-}
 .thumbnails{
     margin-left: 15px;
 }
