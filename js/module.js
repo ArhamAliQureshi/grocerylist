@@ -9,7 +9,7 @@ appModule
         $routeProvider
             .when('/',{
                 templateUrl: 'views/homepage.html',
-                controller: 'listCtrl'
+//                controller: 'listCtrl'
             })
             .when('/book',{
                 templateUrl: 'views/book.html'

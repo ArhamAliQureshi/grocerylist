@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <grocerys>
     <list id="" name="" date="">
-        <items id="">
+        <items>
             <item name="Tinday" quantity="2" status="false" unitPrice="" cost="" cartID=""/>
             <item name="Matter" quantity="3" status="true" unitPrice="" cost="" cartID=""/>
             <item name="Podena" quantity="1" status="false" unitPrice="" cost="" cartID=""/>
         </items>
         <carts>
-            <cart cartID="" name=""/>
-            <cart cartID="" name=""/>
+            <cart cartID="0" name="Babo Baniya" paidCash="500"/>
+            <cart cartID="1" name="Memon Baniya" paidCash="250"/>
         </carts>
     </list>
 </grocerys>

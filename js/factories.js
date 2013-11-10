@@ -1,8 +1,8 @@
 
 appModule
-    .factory('routeChangeFactory',function(dataService){     //Function that need to be performed when route changes are defined here.
+    .factory('cleanProductsFactory',function(dataService){     //Function that need to be performed when route changes are defined here.
         return{
-            removeEmptyItem: function(event, next, current){    // Clean remove elements from array which don't have item. Need to use this because for paging in list.html we appended many empty items.
+            removeEmptyItem: function(){    // Clean remove elements from array which don't have item. Need to use this because for paging in list.html we appended many empty items.
                 Array.prototype.clean = function() {
                     for (var i = 0; i < this.length; i++) {
                         if (this[i].item == '') {
@@ -12,15 +12,20 @@ appModule
                     }
                     return this;
                 };
-                if(next.templateUrl!=current.templateUrl){  //Check if next route is not same as current route.
                     dataService.products().clean();    // Clean remove elements from array which don't have item.
-                }
             }
 
         };
     })
-    .factory('readXML',function(dataService){
+    .factory('jsonFactory',function(dataService,cleanProductsFactory){
         return{
-
+            saveData: function(){
+                var jsonObj = [];
+//                cleanProductsFactory.removeEmptyItem();
+                jsonObj = [
+                    [JSON.stringify(dataService.products()),JSON.stringify(dataService.cartsArray())]
+                ];
+                console.log(jsonObj[0]);
+            }
         }
     });

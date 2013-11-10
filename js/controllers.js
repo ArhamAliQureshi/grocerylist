@@ -1,6 +1,6 @@
 
 appModule
-    .controller('appCtrl',function($scope, dataService){
+    .controller('appCtrl',function($scope, dataService, jsonFactory){
         $scope.title = "GROCERIES LIST";
         $scope.heading = "GROCERIES";
         $scope.date = $scope.date || new Date();
@@ -38,8 +38,12 @@ appModule
                 dataService.products().splice($scope.activeRow,1);
             }
         };
+
+        $scope.save = function(){
+            jsonFactory.saveData();
+        }
     })
-    .controller('newListCtrl',function($scope,  $rootScope, routeChangeFactory, dataService){
+    .controller('newListCtrl',function($scope,  $rootScope, cleanProductsFactory, dataService){
         $scope.products = dataService.products();       //Get products Array from service.
         $scope.nav = dataService.getNav();
         $scope.products.length = 0;
@@ -51,10 +55,10 @@ appModule
         };
 
         $scope.$on("$routeChangeStart",function(event, next, current){  //Event fires when route is about to change.
-            routeChangeFactory.removeEmptyItem(event, next, current);
+            cleanProductsFactory.removeEmptyItem();
         });
     })
-    .controller('listCtrl',function($scope,  $rootScope, routeChangeFactory, dataService){
+    .controller('listCtrl',function($scope,  $rootScope, cleanProductsFactory, dataService){
         $scope.nav = dataService.getNav();
         $scope.products = dataService.products();       //Get products Array from service.
         $scope.rowColor = '{color: green}';
@@ -65,7 +69,7 @@ appModule
         };
 
         $scope.$on("$routeChangeStart",function(event, next, current){  //Event fires when route is about to change.
-            routeChangeFactory.removeEmptyItem(event, next, current);
+            cleanProductsFactory.removeEmptyItem();
         });
     })
     .controller('cartsCtrl',function($scope, dataService){

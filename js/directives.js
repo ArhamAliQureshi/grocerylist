@@ -23,7 +23,9 @@ appModule
     .directive('ngClass',function(){
         return{
             link: function(scope, element, attrs, ctrl) {
-                if(scope.product.status==true){scope.itemBought = true}
+                if(scope.product){ //Bug fix causing problem for cart balance ngClass.
+                    if(scope.product.status==true){scope.itemBought = true}
+                }
             }
         }
     })

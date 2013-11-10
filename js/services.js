@@ -6,8 +6,8 @@ appModule
             {item:'Banana', quantity: 2, status: false, unitPrice: 0, cost: 0, cartID: ''}
         ];
         window.test = products;
-        var nav= {listBtn: true, editBtn: true, removeBtn: true, cartBtn: true};
         var cartsArray=[{name:"Babo Baniya", paidCash: '0'},{name:"Memon Baniya", paidCash: '0'}]; //Contains the list of carts
+        var nav= {listBtn: true, editBtn: true, removeBtn: true, cartBtn: true};
 
         var activeRow = products.length;       //Contains the index of the click row in edit mode.
 
