@@ -19,13 +19,21 @@ appModule
     })
     .factory('jsonFactory',function(dataService,cleanProductsFactory){
         return{
+            loadData: function(){
+                var jsonObj = localStorage.getItem('jsonObj');
+                console.log(JSON.parse(jsonObj));
+            },
             saveData: function(){
                 var jsonObj = [];
-//                cleanProductsFactory.removeEmptyItem();
+                cleanProductsFactory.removeEmptyItem();
                 jsonObj = [
                     [JSON.stringify(dataService.products()),JSON.stringify(dataService.cartsArray())]
                 ];
+//                jsonObj[0].splice(2,1);
                 console.log(jsonObj[0]);
+                localStorage.setItem('jsonObj',jsonObj[0])
+
+
             }
         }
     });

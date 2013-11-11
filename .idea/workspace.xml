@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa3dfbb6-4245-450b-91c0-04b752b15431" name="Default" comment="" />
+    <list default="true" id="fa3dfbb6-4245-450b-91c0-04b752b15431" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/cart.html" afterPath="$PROJECT_DIR$/views/cart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/factories.js" afterPath="$PROJECT_DIR$/js/factories.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="grocerylist.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,10 +31,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="factories.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="factories.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/factories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="40" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="612">
+            <state line="21" column="20" selection-start="935" selection-end="943" vertical-scroll-proportion="0.5234604" vertical-offset="0" max-vertical-offset="748">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="book.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="11" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cart.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/cart.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="138" selection-start="1769" selection-end="1769" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
@@ -44,7 +70,7 @@
       <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="39" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.0" vertical-offset="430" max-vertical-offset="2023">
+            <state line="42" column="12" selection-start="1802" selection-end="1802" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2091">
               <folding />
             </state>
           </provider>
@@ -59,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="7" selection-start="2480" selection-end="2480" vertical-scroll-proportion="0.59117085" vertical-offset="355" max-vertical-offset="901">
+            <state line="37" column="90" selection-start="2530" selection-end="2534" vertical-scroll-proportion="-15.653846" vertical-offset="222" max-vertical-offset="918">
               <folding />
             </state>
           </provider>
@@ -71,7 +97,7 @@
       <file leaf-file-name="directives.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/directives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="86" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1054">
+            <state line="25" column="86" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="1054">
               <folding />
             </state>
           </provider>
@@ -101,8 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/carts.html" />
-        <option value="$PROJECT_DIR$/js/libraries/controllers.js" />
         <option value="$PROJECT_DIR$/views/lits.html" />
         <option value="$PROJECT_DIR$/views/homepage.html" />
         <option value="$PROJECT_DIR$/views/book.html" />
@@ -110,21 +134,23 @@
         <option value="$PROJECT_DIR$/book.xml" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/views/list.html" />
-        <option value="$PROJECT_DIR$/views/cart.html" />
         <option value="$PROJECT_DIR$/js/directives.js" />
         <option value="$PROJECT_DIR$/js/module.js" />
         <option value="$PROJECT_DIR$/js/filters.js" />
-        <option value="$PROJECT_DIR$/js/controllers.js" />
+        <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/views/cart.html" />
+        <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/js/factories.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/controllers.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -174,7 +200,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -207,36 +232,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grocerylist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Grocerylist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grocerylist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Grocerylist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,7 +242,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../work/vcom" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
@@ -351,14 +349,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3265306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23976173" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23969562" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25174382" sideWeight="0.42698193" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884097" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -409,16 +407,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/libraries/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/listImg.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/book.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="23" selection-start="50" selection-end="50" vertical-scroll-proportion="0.031835206" vertical-offset="0" max-vertical-offset="534" />
@@ -427,30 +415,6 @@
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="6" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="2329" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/book.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="11" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/xampp/htdocs/vcommerceImplementation/scripts/IVPlayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1359" column="4" selection-start="35959" selection-end="35959" vertical-scroll-proportion="-19.52" vertical-offset="22615" max-vertical-offset="51765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="107" selection-start="1847" selection-end="1914" vertical-scroll-proportion="0.7504798" vertical-offset="0" max-vertical-offset="521" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/directives.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="86" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1054">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/module.js">
@@ -482,23 +446,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers.js">
+    <entry file="file://$PROJECT_DIR$/js/directives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="39" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.0" vertical-offset="430" max-vertical-offset="2023">
+        <state line="25" column="86" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1054">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/factories.js">
+    <entry file="file://$PROJECT_DIR$/views/carts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="40" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="612">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="11" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="156" selection-end="156" vertical-scroll-proportion="0.097841725" vertical-offset="0" max-vertical-offset="695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="6" selection-start="22" selection-end="22" vertical-scroll-proportion="0.025411062" vertical-offset="0" max-vertical-offset="669">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="138" selection-start="1769" selection-end="1769" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="7" selection-start="2480" selection-end="2480" vertical-scroll-proportion="0.59117085" vertical-offset="355" max-vertical-offset="901">
+        <state line="37" column="90" selection-start="2530" selection-end="2534" vertical-scroll-proportion="-15.653846" vertical-offset="222" max-vertical-offset="918">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="12" selection-start="1802" selection-end="1802" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2091">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/factories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="20" selection-start="935" selection-end="943" vertical-scroll-proportion="0.5234604" vertical-offset="0" max-vertical-offset="748">
           <folding />
         </state>
       </provider>
