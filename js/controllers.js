@@ -39,13 +39,13 @@ appModule
             }
         };
 
-        $scope.load = function(){
-            jsonFactory.loadData();
-        };
-
         $scope.save = function(){
             jsonFactory.saveData();
         };
+    })
+    .controller('bookCtrl',function($scope, jsonFactory, dataService){
+        $scope.book = jsonFactory.loadBook();
+        console.log($scope.book);
     })
     .controller('newListCtrl',function($scope,  $rootScope, cleanProductsFactory, dataService){
         $scope.products = dataService.products();       //Get products Array from service.

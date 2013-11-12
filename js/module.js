@@ -8,11 +8,12 @@ appModule
     .config(function($routeProvider){
         $routeProvider
             .when('/',{
-                templateUrl: 'views/homepage.html',
+                templateUrl: 'views/homepage.html'
 //                controller: 'listCtrl'
             })
             .when('/book',{
-                templateUrl: 'views/book.html'
+                templateUrl: 'views/book.html',
+                controller: 'bookCtrl'
             })
             .when('/newList',{
                 templateUrl: 'views/list.html',

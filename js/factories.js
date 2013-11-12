@@ -1,39 +1,35 @@
 
 appModule
-    .factory('cleanProductsFactory',function(dataService){     //Function that need to be performed when route changes are defined here.
+    .factory('cleanProductsFactory',function(dataService){     //Function that clean the empty items from products.
+        var products = dataService.products();
         return{
             removeEmptyItem: function(){    // Clean remove elements from array which don't have item. Need to use this because for paging in list.html we appended many empty items.
-                Array.prototype.clean = function() {
-                    for (var i = 0; i < this.length; i++) {
-                        if (this[i].item == '') {
-                            this.splice(i, 1);
+                    for (var i = 0; i < products.length; i++) {
+                        if (products[i].item == '') {
+                            products.splice(i, 1);
                             i--;
                         }
                     }
-                    return this;
-                };
-                    dataService.products().clean();    // Clean remove elements from array which don't have item.
+                    return products;
             }
 
         };
     })
     .factory('jsonFactory',function(dataService,cleanProductsFactory){
         return{
-            loadData: function(){
+            loadBook: function(){
                 var jsonObj = localStorage.getItem('jsonObj');
-                console.log(JSON.parse(jsonObj));
+                return JSON.parse(jsonObj);  //Returns book.
             },
+
             saveData: function(){
-                var jsonObj = [];
+
                 cleanProductsFactory.removeEmptyItem();
-                jsonObj = [
-                    [JSON.stringify(dataService.products()),JSON.stringify(dataService.cartsArray())]
+                var jsonObj = [
+                    [dataService.products(), dataService.cartsArray()]
                 ];
-//                jsonObj[0].splice(2,1);
-                console.log(jsonObj[0]);
-                localStorage.setItem('jsonObj',jsonObj[0])
-
-
+                jsonObj = JSON.stringify(jsonObj);
+                localStorage.setItem('jsonObj',jsonObj);
             }
         }
     });
