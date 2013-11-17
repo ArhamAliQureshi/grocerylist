@@ -75,7 +75,6 @@ ul#listBtnContainer>li{
 }
 .listImg{
     float: left;
-
     background: orangered url("../img/listImg.png") no-repeat;
     background-position: center;
     background-size: 50px 50px;
@@ -87,8 +86,9 @@ ul#listBtnContainer>li{
     margin-left: 50px;
     background-color: #f5f5f5;
     height: 100%;
-
+    font-weight: bold;
 }
+
 /*-------book.html-------*/
 
 

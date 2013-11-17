@@ -1,6 +1,9 @@
 <ul id="listBtnContainer">
-    <li class="listBtn" ng-repeat="list in book">
+    <li class="listBtn" ng-repeat="list in book" onclick="location.href='#/list/{{$index}}'">
         <div class="listImg"></div>
-        <div class="listText"></div>
+        <div class="listText">
+            <div id="BookListName" class="pull-left">{{list[0].name}}</div>
+            <div id=BookListDate" class="pull-right">{{list[0].date}}</div>
+        </div>
     </li>
 </ul>

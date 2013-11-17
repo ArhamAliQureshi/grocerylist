@@ -12,24 +12,31 @@ appModule
                     }
                     return products;
             }
-
         };
     })
-    .factory('jsonFactory',function(dataService,cleanProductsFactory){
+    .factory('jsonFactory',function($filter,dataService,cleanProductsFactory){
+        var book = [];
+        var jsonObj;
         return{
             loadBook: function(){
-                var jsonObj = localStorage.getItem('jsonObj');
-                return JSON.parse(jsonObj);  //Returns book.
+                jsonObj = localStorage.getItem('jsonObj');
+                book = JSON.parse(jsonObj);  //Returns book.
+                return book;
             },
 
-            saveData: function(){
-
+            saveData: function(heading,date){
                 cleanProductsFactory.removeEmptyItem();
-                var jsonObj = [
-                    [dataService.products(), dataService.cartsArray()]
+                var listIndex = dataService.listIndex(); //Contains the loaded list index value of jsonObj.
+                book[listIndex]= [
+                    [{name: heading ,date: $filter('date')(date)},dataService.products(), dataService.cartsArray()]
                 ];
-                jsonObj = JSON.stringify(jsonObj);
+                jsonObj = JSON.stringify(book);
                 localStorage.setItem('jsonObj',jsonObj);
+            },
+            numberOfList: function(){ //Added for newList, since we need last index.
+                jsonObj = localStorage.getItem('jsonObj');
+                book = JSON.parse(jsonObj);
+                return book.length;
             }
         }
     });

@@ -9,14 +9,17 @@ appModule
         var cartsArray=[{name:"Babo Baniya", paidCash: '0'},{name:"Memon Baniya", paidCash: '0'}]; //Contains the list of carts
         var nav= {listBtn: true, editBtn: true, removeBtn: true, cartBtn: true};
 
+        var listIndex; //Contains the loaded list index value of jsonObj.
         var activeRow = products.length;       //Contains the index of the click row in edit mode.
 
         return{
             getNav: function(){
                 return nav;
             },
-            products: function(){
-                return products;
+            products: function(value){
+                if(value){products = value;}
+                else
+                    return products;
                 $rootScope.$broadcast('productsChanged', products);
             },
             cartsArray : function (value){   //If value is passed in function then this value will be push else returns cartsArray.
@@ -28,6 +31,12 @@ appModule
             activeRow: function(value){
                 if(!isNaN(parseInt(value))){return activeRow = value;}
                 else
-                    return activeRow;}
+                    return activeRow;},
+
+            listIndex: function(value){
+                if(value){ listIndex = value; }
+                else
+                    return listIndex;
+            }
         }
     });

@@ -40,18 +40,30 @@ appModule
         };
 
         $scope.save = function(){
-            jsonFactory.saveData();
+            jsonFactory.saveData($scope.heading,$scope.date);
         };
+    })
+    .controller('homeCtrl',function($scope, jsonFactory){
+        $scope.listIndex = jsonFactory.numberOfList()-1;
     })
     .controller('bookCtrl',function($scope, jsonFactory, dataService){
         $scope.book = jsonFactory.loadBook();
-        console.log($scope.book);
+
+        $scope.$on("$routeChangeStart",function(event, next, current){  //Event fires when route is about to change.
+            if(next.templateUrl == "views/list.html"){
+                var listIndex = next.params.listIndex;  //Gets click list $index
+                dataService.products($scope.book[listIndex][1]);  //Assign items.
+                dataService.cartsArray($scope.book[listIndex][2]); //Assign carts.
+            }
+        });
     })
-    .controller('newListCtrl',function($scope,  $rootScope, cleanProductsFactory, dataService){
+    .controller('newListCtrl',function($scope, $routeParams, cleanProductsFactory, dataService){
         $scope.products = dataService.products();       //Get products Array from service.
         $scope.nav = dataService.getNav();
         $scope.products.length = 0;
         $scope.rowColor = '{color: green}';
+        dataService.listIndex($routeParams.listIndex);  //Get index of the list from in jsonObj and sets in dataService.
+
         $scope.clickRow = function(element){
             var index = element.$index;
             var activeRow = $scope.isEditable == true? index : false;        //Check if row clicked in edit mode. If not set activeRow = false. Otherwise it will have the array $index value.
@@ -59,13 +71,15 @@ appModule
         };
 
         $scope.$on("$routeChangeStart",function(event, next, current){  //Event fires when route is about to change.
-            cleanProductsFactory.removeEmptyItem();
+            cleanProductsFactory.removeEmptyItem(); //Removes empty rows from products.
         });
     })
-    .controller('listCtrl',function($scope,  $rootScope, cleanProductsFactory, dataService){
+    .controller('listCtrl',function($scope, $routeParams, cleanProductsFactory, dataService){
         $scope.nav = dataService.getNav();
         $scope.products = dataService.products();       //Get products Array from service.
-        $scope.rowColor = '{color: green}';
+        $scope.rowColor = '{color: green}';  //To set bought items color
+        dataService.listIndex($routeParams.listIndex);  //Get index of the list from in jsonObj and sets in dataService.
+
         $scope.clickRow = function(element){
             var index = element.$index;
             var activeRow = $scope.isEditable == true? index : false;        //Check if row clicked in edit mode. If not set activeRow = false. Otherwise it will have the array $index value.
@@ -81,11 +95,11 @@ appModule
         $scope.cartsArray = dataService.cartsArray();
         $scope.addNewCart = function(){         //Called when new cart requested.
             $scope.cartsArray.push({name:'New Cart'});  //Append new Cart in carts array.
-            location.href = '#/cart/'+($scope.cartsArray.length-1);
+            location.href = '#/cart/'+($scope.cartsArray.length-1); //Gets the index of new cart.
         };
         window.testCarts = $scope.cartsArray;
     })
-    .controller('cartCtrl',function($scope, $routeParams,dataService){
+    .controller('cartCtrl',function($scope, $routeParams, dataService){
         $scope.nav = dataService.getNav();
         $scope.cartNumber = $routeParams.cartNumber;    //Get Cart number from URL.
         $scope.products = dataService.products();       //Get products Array from service.

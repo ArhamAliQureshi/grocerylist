@@ -8,18 +8,18 @@ appModule
     .config(function($routeProvider){
         $routeProvider
             .when('/',{
-                templateUrl: 'views/homepage.html'
-//                controller: 'listCtrl'
+                templateUrl: 'views/homepage.html',
+                controller: 'homeCtrl'
             })
             .when('/book',{
                 templateUrl: 'views/book.html',
                 controller: 'bookCtrl'
             })
-            .when('/newList',{
+            .when('/newList/:listIndex',{
                 templateUrl: 'views/list.html',
                 controller: 'newListCtrl'
             })
-            .when('/list',{
+            .when('/list/:listIndex',{
                 templateUrl: 'views/list.html',
                 controller: 'listCtrl'
             })
